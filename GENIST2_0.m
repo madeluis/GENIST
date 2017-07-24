@@ -172,8 +172,9 @@ if is_load_new_data
         TF = dataset('XLSFile',char(TF_file),'ReadObsNames',false);
     end
     if ~exist('symbol_file', 'var') || isempty(symbol_file)
-        symbol(:,1) = genes_file(:,1);
-        symbol(:,2) = genes_file(:,1);
+        tmp(:,1)=genes_file(:,1);
+        tmp(:,2)=genes_file(:,1);
+        symbol = tmp;
     else
         symbol = dataset('XLSFile',char(symbol_file),'ReadObsNames',false);
     end
